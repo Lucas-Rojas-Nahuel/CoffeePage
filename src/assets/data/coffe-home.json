@@ -1,0 +1,26 @@
+[
+  {
+    "id": 9,
+    "name": "Affogato",
+    "title": "Un postre y café en uno solo",
+    "description": "Delicioso helado de vainilla cubierto con un espresso caliente. Una experiencia irresistible que combina lo mejor del dulce y el café.",
+    "img": "Affogato.png",
+    "rating": 4.9
+  },
+  {
+    "id": 14,
+    "name": "Dalgona Coffee",
+    "title": "El café que conquistó internet",
+    "description": "Espuma cremosa de café montada sobre leche fría. Un favorito moderno por su textura ligera y sabor dulce-amargo perfectamente equilibrado.",
+    "img": "Dalgona-Coffee.png",
+    "rating": 4.8
+  },
+  {
+    "id": 17,
+    "name": "Irish Coffee",
+    "title": "Un toque adulto en tu taza",
+    "description": "Café caliente con whisky irlandés y crema espesa. Ideal para una noche especial o para impresionar con un sabor clásico y audaz.",
+    "img": "Irish_Coffee.png",
+    "rating": 4.8
+  }
+]

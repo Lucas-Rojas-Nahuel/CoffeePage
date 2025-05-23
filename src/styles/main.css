@@ -15,13 +15,15 @@ body {
 }
 
 header {
-  background-color:  #191816;
+  background-color: #191816;
   color: white;
   padding: 1rem;
+  position: sticky;
+  top: 0;
 }
 
-.name2{
-    color: #ed9042;
+.name2 {
+  color: #ed9042;
 }
 
 .header-container {
@@ -33,6 +35,7 @@ header {
 h1 {
   text-align: center;
   margin-bottom: 1rem;
+  font-family: 'Poppins';
 }
 
 nav {
@@ -65,16 +68,16 @@ nav button,
   cursor: pointer;
 }
 
+main{
+  background-color: #191816;
+}
+
 .hidden {
   display: none;
-}
-
-main {
-  padding: 2rem;
-}
+} 
 
 footer {
-  background-color: #222;
+  background-color: #312b2b;
   color: white;
   padding: 2rem 1rem;
 }
