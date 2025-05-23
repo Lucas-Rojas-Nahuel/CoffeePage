@@ -1,5 +1,7 @@
 import "../../styles/home/section1.css";
 import homeData from "../../assets/data/coffe-home.json";
+
+
 export default function section1() {
   const content = document.querySelector("#content");
 
