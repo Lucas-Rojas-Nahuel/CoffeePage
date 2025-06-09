@@ -39,7 +39,7 @@ Grano Urbano es una página web moderna y responsiva desarrollada para una cafet
 
 ## 🧾 Meta
 
-**Autor:** [Lucas Rojas](https://github.com/TuUsuario)  
+**Autor:** [Lucas Rojas](https://github.com/Lucas-Rojas-Nahuel)  
 **Licencia:** MIT
 
 ¡Gracias por visitar Grano Urbano! ☕✨
