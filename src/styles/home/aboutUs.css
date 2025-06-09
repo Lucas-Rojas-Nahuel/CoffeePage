@@ -28,6 +28,7 @@
   background-size: cover;
   border-radius: 10px;
   overflow: hidden;
+  animation: float-up-down 3s ease-in-out infinite;
 }
 
 .img2 {
@@ -40,6 +41,7 @@
   background-size: cover;
   border-radius: 10px;
   overflow: hidden;
+  animation: float-down-up 3.5s ease-in-out infinite;
 }
 
 .about-text {
@@ -54,6 +56,7 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
+  font-size: 1.5rem;
 }
 
 .title-about {
@@ -63,18 +66,17 @@
   margin-bottom: 1rem;
 }
 
-.text, .text2 {
+.text,
+.text2 {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1rem;
   color: #ccc;
 }
 
-.text2{
-    color: gray;
+.text2 {
+  color: gray;
 }
-
-
 
 .btn-about {
   background-color: #ff9248;
@@ -83,6 +85,7 @@
   padding: 0.75rem 1.5rem;
   font-weight: bold;
   border-radius: 2rem;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -120,3 +123,4 @@
     text-align: center;
   }
 }
+

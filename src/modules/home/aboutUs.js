@@ -1,7 +1,11 @@
 import "../../styles/home/aboutUs.css";
+import loadContact from "../contact/contact";
 
 export default function aboutUs() {
   const content = document.querySelector("#content");
+
+  const contact = document.getElementById("contact-btn");
+  const home = document.getElementById("home-btn");
 
   const aboutSection = document.createElement("section");
   aboutSection.classList.add("about-section");
@@ -10,10 +14,10 @@ export default function aboutUs() {
   const aboutImages = document.createElement("div");
   aboutImages.classList.add("about-images");
 
-  const img1 = document.createElement("img");
+  const img1 = document.createElement("div");
   img1.classList.add("img1");
 
-  const img2 = document.createElement("img");
+  const img2 = document.createElement("div");
   img2.classList.add("img2");
 
   aboutImages.appendChild(img1);
@@ -27,7 +31,7 @@ export default function aboutUs() {
   subtitle.classList.add("subtitle");
   subtitle.textContent = "Sobre Nosotros";
 
-  const title = document.createElement("h2");
+  const title = document.createElement("h3");
   title.classList.add("title-about");
   title.textContent = "ACERCA DE CAFÉ GRANO URBANO";
 
@@ -42,7 +46,14 @@ export default function aboutUs() {
 
   const btnAbout = document.createElement("button");
   btnAbout.classList.add("btn-about");
-  btnAbout.textContent = "Conocenos";
+  btnAbout.textContent = "Contactanos";
+
+  btnAbout.addEventListener("click", () => {
+    content.innerHTML = "";
+    home.classList.remove("button-selected");
+    contact.classList.add("button-selected");
+    loadContact();
+  });
 
   aboutText.appendChild(subtitle);
   aboutText.appendChild(title);

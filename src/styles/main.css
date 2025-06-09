@@ -8,7 +8,7 @@ body {
   font-family: sans-serif;
   line-height: 1.6;
   background: #f9f9f9;
-  height: 100dvh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -17,9 +17,16 @@ body {
 header {
   background-color: #191816;
   color: white;
-  padding: 1rem;
+  padding: 10px 1rem;
   position: sticky;
   top: 0;
+  z-index: 1000;
+}
+
+.name1 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: lighter;
 }
 
 .name2 {
@@ -34,8 +41,7 @@ header {
 
 h1 {
   text-align: center;
-  margin-bottom: 1rem;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 
 nav {
@@ -43,14 +49,71 @@ nav {
   gap: 0.5rem;
 }
 
-nav button,
-.content-header-btn button {
+nav button {
+  position: relative;
   padding: 0.5rem 1rem;
   border: none;
-  background-color: #555;
+  background-color: transparent;
   color: white;
-  border-radius: 4px;
+  font-family: "Poppins";
   cursor: pointer;
+  overflow: hidden;
+}
+
+nav button:hover {
+  color: #ed9042;
+}
+
+nav button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #ed9042;
+  animation: none;
+}
+
+.button-selected {
+  color: #ed9042;
+}
+
+nav button:hover::after {
+  animation: underline-in 0.3s forwards;
+}
+
+/* Esta parte es la magia para revertir el subrayado con delay */
+nav button::after {
+  transition: none;
+}
+
+nav button:not(:hover)::after {
+  animation: underline-out 0.3s forwards;
+}
+
+/* Aparece de izquierda a derecha */
+@keyframes underline-in {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  100% {
+    width: 100%;
+    left: 0;
+  }
+}
+
+/* Desaparece desplazándose de izquierda a derecha */
+@keyframes underline-out {
+  0% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
 }
 
 .content-header-btn {
@@ -68,24 +131,34 @@ nav button,
   cursor: pointer;
 }
 
-main{
+main {
+  background-color: #e9d5b4;
   background-color: #191816;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .hidden {
   display: none;
-} 
+}
 
 footer {
   background-color: #312b2b;
   color: white;
-  padding: 2rem 1rem;
+  padding: 2rem 4rem 1rem;
+  font-family: "Poppins";
+}
+
+.logo-footer {
+  font-size: 2rem;
 }
 
 .content-footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -101,14 +174,8 @@ footer {
 
 .content-footer li {
   margin-bottom: 0.5rem;
-}
-
-.content-social {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  font-size: 1.5rem;
-  margin-top: 1rem;
+  font-weight: lighter;
+  font-size: 0.8rem;
 }
 
 footer p {
@@ -116,10 +183,48 @@ footer p {
   margin-top: 1rem;
 }
 
+.ul-content li {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+
+.ul-content li a {
+  width: 30px;
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #ed9042;
+}
+
+.whatsapp-footer :hover {
+  color: #25d366;
+}
+
+.facebook-footer:hover {
+  color: #1877f2;
+}
+
+.instagram-footer:hover {
+  color: #e4405f;
+}
+
+.marca {
+  color: #BCB9B9;
+  font-size: 0.7rem;
+}
+
 /* Responsivo */
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
+  }
+
+  footer {
+    padding: 2rem 2rem 1rem;
   }
 
   nav {
@@ -154,9 +259,14 @@ footer p {
 
   nav {
     display: none;
+    transition: all 1s;
   }
 
   nav.active {
     display: flex;
+  }
+
+  nav button::after {
+    display: none;
   }
 }

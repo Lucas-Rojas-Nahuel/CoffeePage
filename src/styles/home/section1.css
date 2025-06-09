@@ -11,7 +11,7 @@
   justify-content: space-between;
   align-items: center;
   border-radius: 40px;
-  padding: 4rem 4rem;
+  padding: 0rem 4rem;
   width: 100%;
   gap: 2rem;
   flex-wrap: wrap;
@@ -93,7 +93,7 @@
     flex-direction: column-reverse;
     align-items: center;
     text-align: center;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
   }
 
   .text-container,
@@ -107,5 +107,19 @@
 
   .btn-article {
     align-self: center;
+  }
+}
+
+/* En section1.css */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

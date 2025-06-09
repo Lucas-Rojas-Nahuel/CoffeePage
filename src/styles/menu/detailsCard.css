@@ -1,0 +1,195 @@
+/* Tarjeta base */
+.body {
+  background-color: #e9d5b4;
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  color: #333;
+  width: 100%;
+  flex: 1;
+}
+
+.coffee-card {
+  width: 90%;
+  max-width: 600px;
+  height: 350px;
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(160deg, #ed9042, #312b2b);
+  border-radius: 30px;
+  overflow: hidden;
+  color: #ccc;
+  font-family: "Poppins";
+  box-shadow: 11px 10px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.icon-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: linear-gradient(160deg, #ed9042, #312b2b);
+  border-radius: 50%;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.coffee-image {
+  position: relative;
+}
+
+.coffee-image img {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #ed9042, #312b2b);
+  object-fit: cover;
+  border-radius: 0 30px 30px 30px;
+}
+
+.coffee-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rating-details {
+  display: flex;
+  justify-content: space-between;
+  color: #ed9042;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  margin-right: 1rem;
+}
+
+.title-datails {
+  font-size: 1.5rem;
+  margin: 0.5rem 0 1rem;
+  color: #ed9042;
+}
+
+.size-options p {
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+.sizes {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.size {
+  font-family: "Poppins";
+  padding: 0.3rem 0.5rem;
+  border-radius: 20px;
+  border: 1px solid #cacbce;
+  background: #cacbce;
+  font-size: 0.8rem;
+}
+
+.size.selected {
+  background-color: #ed9042;
+  color: white;
+  border-color: transparent;
+}
+
+.about,
+.region {
+  margin: 0.5rem 0;
+}
+
+.desc {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quantity button {
+  background: #eee;
+  border: none;
+  padding: 0.3rem 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.buy-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #ed9042;
+  border: none;
+  color: white;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.buy-btn:hover {
+  background-color: #d47825;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .coffee-card {
+    max-width: 500px;
+    width: 100%;
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .coffee-image {
+    height: 30%;
+  }
+
+  .coffee-image img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 30px 30px 30px 30px;
+    display: block;
+  }
+
+  .coffee-info {
+    padding: 1rem 1.5rem;
+  }
+
+  .body {
+    padding: 1rem;
+  }
+
+  .title-datails {
+    font-size: 1.7rem;
+  }
+
+  .desc {
+    font-size: 1rem;
+  }
+}

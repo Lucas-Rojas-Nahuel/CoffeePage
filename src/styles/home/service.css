@@ -1,0 +1,121 @@
+.services-section {
+  background: #121212;
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.services-subtitle {
+  color: #e88c3b;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.services-title {
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+  color: #ccc;
+}
+
+.services-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 280px;
+}
+
+.service {
+  background-color: #1e1e1e;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  text-align: left;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.service img {
+  width: 36px;
+  filter: brightness(0) invert(1) sepia(1) saturate(10) hue-rotate(330deg);
+}
+
+.service h3 {
+  color: #e88c3b;
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.service p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.service-images {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  background: url("../../assets/images/coffee-img-service/bg-service.avif");
+  background-position: center;
+  background-size: cover;
+}
+
+.img3 {
+  position: absolute;
+  top: -30px;
+  left: -15px;
+  width: 150px;
+  height: 150px;
+  background: url("../../assets/images/coffee-img-service/img1.avif");
+  background-size: cover;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 1;
+  animation: float-down-up 3.5s ease-in-out infinite;
+}
+
+.img4 {
+  position: absolute;
+  top: 100px;
+  right: -15px;
+  width: 200px;
+  height: 200px;
+  background: url("../../assets/images/coffee-img-service/img2.avif");
+  background-size: cover;
+  border-radius: 10px;
+  overflow: hidden;
+  animation: float-up-down 3s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service {
+    text-align: center;
+  }
+
+  .service-column {
+    flex-direction: row;
+    max-width: 900px;
+  }
+
+  .service-images {
+    order: -1;
+  }
+}
+
+@media (max-width: 500px) {
+  .service-column {
+    flex-direction: column;
+    max-width: 500px;
+  }
+}

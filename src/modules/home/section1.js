@@ -1,6 +1,7 @@
 import "../../styles/home/section1.css";
 import homeData from "../../assets/data/coffe-home.json";
-
+import detailsCard from "../menu/detailsCard";
+import coffeeListJson from "../../assets/data/coffees.json";
 
 export default function section1() {
   const content = document.querySelector("#content");
@@ -18,47 +19,75 @@ export default function section1() {
   //lista de los articulos
   const name = document.createElement("p");
   name.classList.add("name");
-  const title = document.createElement("h3");
+
+  const title = document.createElement("h2");
   title.classList.add("title");
+
   const description = document.createElement("p");
   description.classList.add("description");
+
   const btn = document.createElement("button");
   btn.classList.add("btn-article");
-  btn.textContent = "Comprar Ahora";
+  btn.textContent = "Mas detalles";
 
   // vista de la imagenes
   const divSectionImg = document.createElement("div");
   divSectionImg.classList.add("div-img");
+
   const img = document.createElement("img");
   img.classList.add("img-article");
 
-  //carrosel
-  name.textContent = homeData[0].name;
-  title.textContent = homeData[0].title;
-  description.textContent = homeData[0].description;
-  console.log(homeData[0].img);
-  img.src = require(`../../assets/images/coffe-img-home/${homeData[0].img}`);
+  //efecto de salida
+  article1.classList.add("fade-in");
+  img.classList.add("fade-in");
 
-  let index = 1;
+  let index = 0;
+
+  //rederisamos los contenidos
+  function renderSlide(i) {
+    name.textContent = homeData[i].name;
+    title.textContent = homeData[i].title;
+    description.textContent = homeData[i].description;
+    img.src = require(`../../assets/images/coffe-img-home/${homeData[i].img}`);
+    img.alt = homeData[i].name;
+
+    // Reiniciar animación en texto
+    article1.classList.remove("fade-in");
+    void article1.offsetWidth; // Fuerza el reflow para que vuelva a aplicar la animación
+    article1.classList.add("fade-in");
+
+    //animar imagen también
+    img.classList.remove("fade-in");
+    void img.offsetWidth;
+    img.classList.add("fade-in");
+  }
+
+  renderSlide(index);
+
+  btn.addEventListener("click", () => {
+    const coffeeFilter = coffeeListJson.filter(
+      (coffee) => coffee.id === homeData[index].id
+    );
+
+    content.innerHTML = "";
+
+    detailsCard(coffeeFilter[0], true);
+  });
+
+  //tiempo en que cambia de tarjeta
   setInterval(() => {
-    name.textContent = homeData[index].name;
-    title.textContent = homeData[index].title;
-    description.textContent = homeData[index].description;
-    console.log(homeData[index].img);
-    img.src = require(`../../assets/images/coffe-img-home/${homeData[index].img}`);
-    article1.appendChild(btn);
-    index = (index + 1) % 3;
+    index = (index + 1) % homeData.length;
+    renderSlide(index);
   }, 5000);
 
   //agregamos etiquetas
-  article1.appendChild(name);
-  article1.appendChild(title);
-  article1.appendChild(description);
-  article1.appendChild(btn);
+
+  article1.append(name, title, description, btn);
+
   divSectionImg.appendChild(img);
 
-  div.appendChild(article1);
-  div.appendChild(divSectionImg);
+  div.append(article1, divSectionImg);
+
   section1.appendChild(div);
   content.appendChild(section1);
 }
