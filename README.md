@@ -16,12 +16,15 @@ Grano Urbano es una página web moderna y responsiva desarrollada para una cafet
 - HTML5
 - CSS3
 - JavaScript (modular)
-- Webpack 
+- Webpack
 - Imágenes y assets optimizados
 
 ## 📷 Vista previa
 
-![Grano Urbano](./src/assets/screenshot/screenshot-home.png)
+![Grano Urbano Inicio](./src/assets/screenshot/screenshot-home.png)
+![Grano Urbano Menu](./src/assets/screenshot/screenshot-menu.png)
+![Grano Urbano Menu Producto](./src/assets/screenshot/screenshot-product.png)
+![Grano Urbano Contactanos](./src/assets/screenshot/screenshot-contact.png)
 
 ## 📁 Estructura del proyecto
 
