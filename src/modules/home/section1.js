@@ -38,7 +38,7 @@ export default function section1() {
   img.classList.add("img-article");
 
   //efecto de salida
-  article1.classList.add("fade-in");
+  article1.classList.add("fade-in"); 
   img.classList.add("fade-in");
 
   let index = 0;

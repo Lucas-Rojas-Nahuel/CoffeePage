@@ -38,7 +38,7 @@ export default function loadMenu() {
   input.id = "search";
   input.name = "search";
   input.placeholder = "Buscar";
- 
+
   const button = document.createElement("button");
   button.type = "submit";
   button.setAttribute("aria-label", "Search");
@@ -165,6 +165,13 @@ export default function loadMenu() {
     li.setAttribute("data-category", `${categori}`);
     li.textContent = `${categori}`;
 
+    if (categoriSelected != 0) {
+      categoriSelected.forEach((categori) => {
+        if (categori === li.dataset.category) {
+          li.classList.add("active");
+        }
+      });
+    }
     li.addEventListener("click", () => {
       if (li.classList.contains("active")) {
         li.classList.remove("active");
@@ -175,7 +182,7 @@ export default function loadMenu() {
         li.classList.add("active");
         categoriSelected.push(li.dataset.category);
       }
-      console.log(categoriSelected);
+
       if (categoriSelected.length === 0) {
         json = coffeeListJson;
         listCard(json);
@@ -183,7 +190,7 @@ export default function loadMenu() {
         const filtrado = coffeeListJson.filter((coffee) =>
           categoriSelected.includes(coffee.categoria)
         );
-        console.log(filtrado);
+
         json = filtrado;
         listCard(json);
       }
